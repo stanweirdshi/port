@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>202410620 - Minerales, Mc Stanley C. - IT1C</title>
+  <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #1a1a1a;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #ffcc00;
+}
+
+.navbar {
+  background-color: #333;
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+.navbar ul li {
+  margin: 0 1.5rem;
+}
+
+.navbar ul li a {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.navbar ul li a:hover {
+  color: #ffcc00;
+}
+
+.hero {
+  text-align: center;
+  padding: 100px 0;
+  background-color: #222;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero .btn {
+  background-color: #ffcc00;
+  color: #222;
+  padding: 10px 30px;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  text-transform: uppercase;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.hero .btn:hover {
+  background-color: #e6b800;
+  transform: scale(1.1);
+}
+
+.about {
+  background-color: #333;
+  padding: 50px 0;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.about-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-right: 30px;
+  transition: transform 0.3s;
+}
+
+.profile-pic:hover {
+  transform: rotate(10deg);
+}
+
+.text {
+  max-width: 500px;
+}
+
+.text h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.text p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: #ffcc00;
+}
+
+.social-icons a:hover {
+  color: #e6b800;
+}
+
+.skills {
+  background-color: #222;
+  padding: 50px 0;
+}
+
+.skills h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.skill-item {
+  background-color: #444;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.skill-item:hover {
+  background-color: #555;
+  transform: scale(1.1);
+}
+
+.projects {
+  background-color: #333;
+  padding: 50px 0;
+}
+
+.projects h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  justify-items: center;
+}
+
+.project-item {
+  background-color: #444;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.project-item img {
+  width: 30%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.project-item h3 {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+
+.project-item p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.project-item a {
+  color: #ffcc00;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.project-item:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
+  transform: translateY(-5px);
+}
+
+.contact {
+  background-color: #222;
+  padding: 50px 0;
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 15px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #444;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  background-color: #555;
+}
+
+.contact-form button {
+  padding: 15px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  background-color: #ffcc00;
+  color: #222;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #e6b800;
+  transform: scale(1.05);
+}
+
+footer {
+  background-color: #333;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.1rem;
+  color: #aaa;
+}
+  </style>
+  <body>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  
+    <header class="hero" id="home">
+      <h1>Hello, Welcome to my Portfolio!</h1>
+      <h2>Mc Stanley C. Minerales</h2>
+      <p>Information Technology Student</p>
+      <a href="https://drive.google.com/file/d/1A2UClSMsflZPiiMLf5cTtTEWkM1jQVzD/view?usp=drivesdk" class="btn">RESUME</a>
+    </header>
+  
+    <section id="about" class="about">
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="about-content">
+          <img src="qqq.jpg" alt="Profile Picture" class="profile-pic">
+          <div class="text">
+            <h3>I’m Mc Stanley C. Minerales</h3>
+            <p>A <strong>Information Technology Student</strong> based in <strong>Cavite State University Silang - Philippines</strong>.</p>
+            <p>I enjoy developing online applications that improve user experience and designing responsive user interfaces.</p>
+            <p><strong>Bachelor of Science in Information Technology</strong> - <strong>First Year Student</strong> - <strong>IT1C</strong></p>
+            <div class="social-icons">
+              <a href="https://github.com/stanweirdshi">GitHub</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2>Programming Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-item">HTML</div>
+          <div class="skill-item">C++</div>
+          <div class="skill-item">CSS</div>
+          <div class="skill-item">JAVASCRIPT</div>
+        </div>
+      </div>
+    </section>
+  
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="project-grid">
+          <div class="project-item">
+            <img src="111.jpg" alt="Project 1">
+            <h3>Stan's Comic</h3>
+            <p>DC and Marvel comic that you can see your favorite superheroes.</p>
+            <a href="https://stanweirdshi.github.io/project1/">View Project</a>
+          </div>
+          <div class="project-item">
+            <img src="hahaha.jpg" alt="Project 2">
+            <h3>Stan's Calculator</h3>
+            <p>A Simple Calculator.</p>
+            <a href="https://stanweirdshi.github.io/project2/">View Project</a>
+          </div>
+    </section>
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2>Contact Me</h2>
+        <form action="#" method="POST" class="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+  
+    <footer>
+      <p>&copy; 2025 Mc Stanleys C. Minerales. All rights reserved.</p>
+    </footer>
+  </body>
+  
+  </html>
